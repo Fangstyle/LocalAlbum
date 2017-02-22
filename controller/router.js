@@ -1,7 +1,15 @@
 /**
  * Created by baocheng on 2017/2/22.
  */
-var fs = require('./module/file');
+var file = require('../module/file.js');
 exports.showIndex = (req,res)=>{
-    res.render("index");
+    file.readLocalDir(function (dirList) {
+        res.render('index.ejs',{"ablum":dirList},function (err,html) {
+        res.send(html);
+    });
+});
+
+}
+exports.showAlbum = (req,res)=>{
+    res.send(req.albumName.toString());
 }

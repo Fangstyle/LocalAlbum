@@ -18,25 +18,17 @@
     <li><a href="#">Library</a></li>
     <li class="active">Data</li>
 </ol>
-<div class="row center-block">
+<div class="container">
+<div class="row ">
+    <% for(var i = 0 ;i < ablum.length;i++){ %>
     <div class="col-xs-6 col-md-3">
-        <a href="#" class="thumbnail">
-            <img src="..." alt="...">
+        <a href="<%=ablum[i]%>" class="thumbnail">
+            <img src="images/wjj.jpg" alt="...">
         </a>
+        <h4 class="text-center"><%=ablum[i]%></h4>
     </div>
-
-    <div class="col-xs-6 col-md-3">
-        <a href="#" class="thumbnail">
-            <img src="..." alt="...">
-        </a>
-    </div>
-
-    <div class="col-xs-6 col-md-3">
-        <a href="#" class="thumbnail">
-            <img src="..." alt="...">
-        </a>
-    </div>
-
+    <% } %>
+</div>
 </div>
 <script src="js/jquery-1.11.3.min.js"></script>
 <script src="js/bootstrap.js"></script>
