@@ -11,5 +11,10 @@ exports.showIndex = (req,res)=>{
 
 }
 exports.showAlbum = (req,res)=>{
-    res.send(req.albumName.toString());
+    var currentDir = req.params.albumName.toString();
+    file.readPicture(currentDir,(picList)=>{
+        res.render('detail.ejs',{"picList":picList},function (err,html) {
+            res.send(html);
+    });
+});
 }
